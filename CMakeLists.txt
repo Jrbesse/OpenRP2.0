@@ -372,7 +372,7 @@ endif()
 add_subdirectory(lib/minizip)
 
 # Add projects
-add_subdirectory(${SPDir})
+# add_subdirectory(${SPDir})
 if(BuildJK2SPGame)
 	add_subdirectory("${JK2SPDir}/game")
 endif()
