@@ -414,6 +414,22 @@ void Cmd_God_f( gentity_t *ent ) {
 
 /*
 ==================
+Cmd_Testcommand_f
+
+Sends a friendly message to the player
+
+argv(0) testcommand
+==================
+*/
+void Cmd_Testcommand_f(gentity_t* ent) {
+	char* msg = NULL;
+	msg = "Hello, world!";
+	trap->SendServerCommand(ent - g_entities, va("print \"Hello, World!\n\""));
+}
+
+
+/*
+==================
 Cmd_Notarget_f
 
 Sets client to notarget
@@ -3399,6 +3415,7 @@ command_t commands[] = {
 	{ "give",				Cmd_Give_f,					CMD_CHEAT|CMD_ALIVE|CMD_NOINTERMISSION },
 	{ "giveother",			Cmd_GiveOther_f,			CMD_CHEAT|CMD_NOINTERMISSION },
 	{ "god",				Cmd_God_f,					CMD_CHEAT|CMD_ALIVE|CMD_NOINTERMISSION },
+	{ "testcommand",		Cmd_Testcommand_f,			0 },
 	{ "kill",				Cmd_Kill_f,					CMD_ALIVE|CMD_NOINTERMISSION },
 	{ "killother",			Cmd_KillOther_f,			CMD_CHEAT|CMD_NOINTERMISSION },
 //	{ "kylesmash",			TryGrapple,					0 },
